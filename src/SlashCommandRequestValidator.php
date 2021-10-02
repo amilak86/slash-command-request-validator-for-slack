@@ -28,7 +28,7 @@ class SlashCommandRequestValidator
 		// validate request timestamp
 		// if the request timestamp is more than five minutes from local time
 		// it could be a replay attack, so ignore it
-		if(abs($reqheaders['X-Slack-Request-Timestamp'] - time()) > self::reqValidTimeframe);
+		if(abs($reqheaders['X-Slack-Request-Timestamp'] - time()) > self::$reqAllowedWithin);
 		{
 			throw new Exception('Request timestamp exceeds the valid timeframe allowed!');
 		}
