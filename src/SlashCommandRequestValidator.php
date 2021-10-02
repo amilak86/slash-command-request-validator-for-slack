@@ -58,7 +58,7 @@ class SlashCommandRequestValidator
 	 *
 	 * @return string
 	 */
-	private static getRequestBody()
+	private static function getRequestBody()
 	{
 		return file_get_contents("php://input");
 	}
