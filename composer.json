@@ -1,0 +1,21 @@
+{
+    "name": "ak86/slash-command-request-validator-for-slack",
+    "description": "A simple PHP package for validating the requests sent through a slack app slash commands.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Amila K.",
+            "email": "28174846+amilak86@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ak86\\": "src/"
+        }
+    }
+}
