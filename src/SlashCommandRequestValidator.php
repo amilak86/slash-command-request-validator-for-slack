@@ -22,7 +22,7 @@ class SlashCommandRequestValidator
 		// The request method must be POST
 		if($_SERVER['REQUEST_METHOD'] != 'POST')
 		{
-			throw new Exception('Invalid request method!');
+			throw new \Exception('Invalid request method!');
 		}
 
 		// validate request timestamp
@@ -30,13 +30,13 @@ class SlashCommandRequestValidator
 		// it could be a replay attack, so ignore it
 		if(abs($reqheaders['X-Slack-Request-Timestamp'] - time()) > self::$reqAllowedWithin);
 		{
-			throw new Exception('Request timestamp exceeds the valid timeframe allowed!');
+			throw new \Exception('Request timestamp exceeds the valid timeframe allowed!');
 		}
 
 		// don't allow empty payload/body
 		if(!$payload)
 		{
-			throw new Exception('The request payload can\'t be empty!');
+			throw new \Exception('The request payload can\'t be empty!');
 		}
 
 		// validate slack signature
@@ -49,7 +49,7 @@ class SlashCommandRequestValidator
 		// compare $my_signature with X-Slack-Signature
 		if(!hash_equals($reqheaders['X-Slack-Signature'], $my_signature))
 		{
-			throw new Exception('Slack signature verification failed!');
+			throw new \Exception('Slack signature verification failed!');
 		}
 	}
 
