@@ -15,12 +15,16 @@ Please refer to below Slack documentation for the complete information on its en
 
 ## Requirements
 - PHP 5.6 or higher
+- Slack Signing Secret
 
 ## Installation
 You can install the package with Composer, by running the below command in your project root folder:
 ```
 composer require ak86/slash-command-request-validator-for-slack
 ``` 
+
+Make sure to add your **Slack Signing Secret** as an environment variable on your server where you run your script. The environment variable should be named `SLACK_SIGNING_SECRET`. You can find your **Slack Signing Secret** in the **Basic Information** section of your Slack App's admin dashboard. 
+
 
 ## Basic Usage
 In your app where slack slash command is configured to send its requests:
